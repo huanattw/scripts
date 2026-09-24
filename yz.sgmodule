@@ -1,10 +1,10 @@
-#!name = YZU Portal 轉址 A→B
-#!desc = 攔截 /NewPortalMaui/api/Auth/RSAkeybyAppID (AppID=MauiYzu20250930)，改送 /NewPortal/api/Auth/RSAkeybyAppID (AppID=XamPrismYzu20180206)，並把 B 的回應帶回給 A
+#!name = YZU Portal 舊 App 續命
+#!desc = 把舊 App 的 /NewPortal/api/Auth/ 請求改導到 Maui 後端 /NewPortalMaui/api/Auth/，AppID 換成 MauiYzu20250930，回應沿原路回給舊 App。涵蓋 RSAkeybyAppID / UserAccessToken / CheckUserToken 整個登入流程
 #!category = 自訂
 #!system = ios,mac
 
 [Script]
-YZU-RSAkey-Rewrite = type=http-request, pattern=^https:\/\/portalx\.yzu\.edu\.tw\/NewPortalMaui\/api\/Auth\/RSAkeybyAppID, requires-body=1, script-path=https://raw.githubusercontent.com/huanattw/scripts/refs/heads/main/yzu-newportal-maui.js
+YZU-Portal-Rewrite = type=http-request, pattern=^https:\/\/portalx\.yzu\.edu\.tw\/NewPortal\/api\/Auth\/, requires-body=1, script-path=https://raw.githubusercontent.com/huanattw/scripts/refs/heads/main/yzu-newportal-maui.js
 
 [MITM]
 hostname = %APPEND% portalx.yzu.edu.tw
