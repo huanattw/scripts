@@ -1,6 +1,5 @@
-#!name = YZU Portal 舊 App 續命
-#!desc = 把舊 App 的 /NewPortal/api/Auth/ 請求改導到 Maui 後端 /NewPortalMaui/api/Auth/，AppID 換成 MauiYzu20250930，回應沿原路回給舊 App。涵蓋 RSAkeybyAppID / UserAccessToken / CheckUserToken 整個登入流程
-#!category = 自訂
+#!name = YZU Portal 
+#!desc = REW
 #!system = ios,mac
 
 [Script]
